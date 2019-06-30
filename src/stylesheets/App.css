@@ -1,0 +1,73 @@
+/* ========= Application Style ========= */
+
+.App {
+  text-align: center;
+}
+
+#appBackground {
+  background-image: url("../static/background.png");
+  background-size: cover;
+  opacity: 0.1;
+  min-height: 100vh;
+}
+
+#appContent {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+}
+
+/* ========= Timer Container Style ========= */
+
+#timerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 70vh;
+  min-width: 40vw;
+  color: white;
+  border-radius: 5px;
+  background: linear-gradient(to right, #F1314C, #FF6633);
+  padding: 1rem;
+}
+
+#timerNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%
+}
+
+/* ========= Button Style ========= */
+
+.button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.buttonImage {
+  height: 2rem;
+  width: 2rem;
+}
+
+#timerToggle {
+  height: 2rem;
+  width: 3.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  display: flex;
+}
+
+.toggleBall {
+  left: 0;
+  height: 2rem;
+  width: 2rem;
+  z-index: 1;
+}
