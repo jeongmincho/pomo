@@ -1,11 +1,16 @@
 import React from "react";
+import ReactCountdownClock from "react-countdown-clock";
 
-const TimerClock = () => {
-  return (
-    <div id="timerClockContainer">
-      <div id="timerClock" />
-    </div>
-  );
-};
+class TimerClock extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      time: 1000
+    };
+  }
+  render() {
+    return <div id="timerClockContainer" />;
+  }
+}
 
 export default TimerClock;
