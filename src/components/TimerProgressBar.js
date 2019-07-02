@@ -33,6 +33,8 @@ const TimerProgressBar = props => {
         })}
         text={
           sec < 10 ? (
+            //probably will have to wrap the whole progress bar with a div
+            //and render html tag on top of it with position absolute
             <tspan dy={needDominantBaselineFix ? -15 : 0} id="timerText">
               {min}:0{sec}
             </tspan>
