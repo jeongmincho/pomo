@@ -10,6 +10,7 @@ const TimerProgressBar = props => {
   const total = 25 * 60;
   const current = min * 60 + sec;
   const percentage = (current / total) * 100;
+  console.log(percentage);
   return (
     <div style={{ width: "430px" }}>
       <CircularProgressbar

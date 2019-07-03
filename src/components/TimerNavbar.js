@@ -4,7 +4,6 @@ import toggleBall from "../static/toggleBall.png";
 import reset from "../static/reset.png";
 
 const TimerNavbar = props => {
-  console.log("navbar: " + props.buttonStatus());
   return (
     <div id="timerNavbar">
       <div id="timerToggle">
@@ -13,7 +12,12 @@ const TimerNavbar = props => {
 
       <button className="button">
         {props.buttonStatus() === "BREAK" ? (
-          <img src={reset} alt="Reset Button" className="buttonImage" />
+          <img
+            src={reset}
+            alt="Reset Button"
+            className="buttonImage"
+            onClick={props.resetHandler}
+          />
         ) : (
           <img src={settings} alt="Settings Button" className="buttonImage" />
         )}
