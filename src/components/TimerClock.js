@@ -15,10 +15,15 @@ const TimerClock = props => {
       ) : (
         <TimerText min={min} sec={sec} />
       )}
-
       <button
         id="timerButton"
-        onClick={props.timerOn ? props.stopInterval : props.startInterval}
+        onClick={
+          props.timerOn
+            ? props.stopInterval
+            : props.time !== 0
+            ? props.startInterval
+            : props.changeAppStatusHandler
+        }
       >
         {props.buttonStatus()}
       </button>

@@ -1,16 +1,41 @@
 import React from "react";
 import "./stylesheets/App.css";
-import TimerContainer from "./components/TimerContainer.js";
+import WorkTimerContainer from "./components/WorkTimerContainer.js";
+import BreakTimerContainer from "./components/BreakTimerContainer.js";
 
-function App() {
-  return (
-    <div className="App">
-      <div id="appBackground" />
-      <div id="appContent">
-        <TimerContainer />
+export default class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isStatusWork: true
+    };
+    this.changeAppStatusHandler = this.changeAppStatusHandler.bind(this);
+  }
+
+  changeAppStatusHandler() {
+    this.setState({
+      isStatusWork: !this.state.isStatusWork
+    });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div id="appBackground" />
+        <div id="appContent">
+          {this.state.isStatusWork ? (
+            <WorkTimerContainer
+              isStatusWork={this.state.isStatusWork}
+              changeAppStatusHandler={this.changeAppStatusHandler}
+            />
+          ) : (
+            <BreakTimerContainer
+              isStatusWork={this.state.isStatusWork}
+              changeAppStatusHandler={this.changeAppStatusHandler}
+            />
+          )}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
-
-export default App;

@@ -2,9 +2,9 @@ import React from "react";
 import TimerNavbar from "./TimerNavbar.js";
 import TimerClock from "./TimerClock.js";
 
-class TimerContainer extends React.Component {
-  constructor() {
-    super();
+class WorkTimerContainer extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
       time: 30,
       timerOn: false,
@@ -68,7 +68,7 @@ class TimerContainer extends React.Component {
 
   render() {
     return (
-      <div id="timerContainer">
+      <div id="workTimeContainer">
         {!this.state.timerOn ? (
           <TimerNavbar
             buttonStatus={this.buttonStatus}
@@ -83,10 +83,11 @@ class TimerContainer extends React.Component {
           stopInterval={this.stopInterval}
           startInterval={this.startInterval}
           buttonStatus={this.buttonStatus}
+          changeAppStatusHandler={this.props.changeAppStatusHandler}
         />
       </div>
     );
   }
 }
 
-export default TimerContainer;
+export default WorkTimerContainer;
