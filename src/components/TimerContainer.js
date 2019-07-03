@@ -6,20 +6,22 @@ class TimerContainer extends React.Component {
   constructor() {
     super();
     this.state = {
-      time: 60,
+      time: 30,
       timerOn: false,
+      settingsOn: false,
       numberCompleted: 3
     };
     this.stopInterval = this.stopInterval.bind(this);
     this.startInterval = this.startInterval.bind(this);
+    this.buttonStatus = this.buttonStatus.bind(this);
   }
 
   buttonStatus() {
     let result = "";
     if (this.timerOn) result = "PAUSE";
     else {
-      switch (this.time) {
-        case 60:
+      switch (this.state.time) {
+        case 30:
           result = "START";
           break;
         case 0:
@@ -50,7 +52,7 @@ class TimerContainer extends React.Component {
   startInterval() {
     this.timerID = setInterval(() => {
       this.setState({ time: this.state.time - 1 });
-      if (this.state.time === 0) this.doneInterval();
+      if (this.state.time === 0) this.stopInterval();
     }, 250);
     this.setState({
       timerOn: true
@@ -60,7 +62,11 @@ class TimerContainer extends React.Component {
   render() {
     return (
       <div id="timerContainer">
-        {!this.state.timerOn ? <TimerNavbar /> : <div id="filler" />}
+        {!this.state.timerOn ? (
+          <TimerNavbar buttonStatus={this.buttonStatus} />
+        ) : (
+          <div id="filler" />
+        )}
         <TimerClock
           time={this.state.time}
           timerOn={this.state.timerOn}
