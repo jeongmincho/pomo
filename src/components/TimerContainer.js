@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../static/logo.svg";
 import TimerNavbar from "./TimerNavbar.js";
 import TimerClock from "./TimerClock.js";
 
@@ -7,13 +6,30 @@ class TimerContainer extends React.Component {
   constructor() {
     super();
     this.state = {
-      time: 120,
+      time: 60,
       timerOn: false,
-      firstTime: false,
       numberCompleted: 3
     };
     this.stopInterval = this.stopInterval.bind(this);
     this.startInterval = this.startInterval.bind(this);
+  }
+
+  buttonStatus() {
+    let result = "";
+    if (this.timerOn) result = "PAUSE";
+    else {
+      switch (this.time) {
+        case 60:
+          result = "START";
+          break;
+        case 0:
+          result = "BREAK";
+          break;
+        default:
+          result = "RESUME";
+      }
+    }
+    return result;
   }
 
   stopInterval() {
@@ -23,10 +39,18 @@ class TimerContainer extends React.Component {
     });
   }
 
+  doneInterval() {
+    clearInterval(this.timerID);
+    this.setState({
+      time: 60,
+      timerOn: false
+    });
+  }
+
   startInterval() {
-    this.setState({ firstTime: true });
     this.timerID = setInterval(() => {
       this.setState({ time: this.state.time - 1 });
+      if (this.state.time === 0) this.doneInterval();
     }, 250);
     this.setState({
       timerOn: true
@@ -42,7 +66,7 @@ class TimerContainer extends React.Component {
           timerOn={this.state.timerOn}
           stopInterval={this.stopInterval}
           startInterval={this.startInterval}
-          firstTime={this.state.firstTime}
+          buttonStatus={this.buttonStatus}
         />
       </div>
     );

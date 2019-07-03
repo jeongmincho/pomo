@@ -4,8 +4,6 @@ import React from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-const needDominantBaselineFix = true;
-
 const TimerProgressBar = props => {
   const min = props.min;
   const sec = props.sec;
@@ -25,42 +23,11 @@ const TimerProgressBar = props => {
           pathTransitionDuration: 0.5,
           pathColor: "#FFFFFF",
           textColor: "#FFFFFF",
-          trailColor: "#FF8389",
-          text: {
-            fill: "#FFFFFF",
-            fontSize: "16px"
-          }
+          trailColor: "#FF8389"
         })}
-        text={
-          sec < 10 ? (
-            //probably will have to wrap the whole progress bar with a div
-            //and render html tag on top of it with position absolute
-            <tspan dy={needDominantBaselineFix ? -15 : 0} id="timerText">
-              {min}:0{sec}
-            </tspan>
-          ) : (
-            <tspan dy={needDominantBaselineFix ? -15 : 0} id="timerText">
-              {min}:{sec}
-            </tspan>
-          )
-        }
       />
     </div>
   );
 };
-
-// const TimerProgressBar = props => {
-//   const min = props.min;
-//   const sec = props.sec;
-// const total = 25 * 60;
-// const current = min * 60 + sec;
-//   const rate = (current / total) * 100;
-//   return (
-//     <div id="timerProgressContainer">
-//       <div id="timerProgressBar" style={{ width: `${rate}%` }} />
-//       <canvas id="myCanvas" width="500" height="500" />
-//     </div>
-//   );
-// };
 
 export default TimerProgressBar;

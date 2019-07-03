@@ -1,6 +1,8 @@
 import React from "react";
 import TimerProgressBar from "./TimerProgressBar.js";
+import TimerText from "./TimerText.js";
 // import ReactCountdownClock from "react-countdown-clock";
+import check from "../static/check.png";
 
 class TimerClock extends React.Component {
   constructor(props) {
@@ -13,15 +15,23 @@ class TimerClock extends React.Component {
     return (
       <div id="timerClock">
         <TimerProgressBar min={min} sec={sec} />
-        {this.props.timerOn ? (
-          <button id="timerButton" onClick={this.props.stopInterval}>
-            PAUSE
-          </button>
+
+        {this.props.buttonStatus() === "BREAK" ? (
+          <img src={check} id="check" alt="completed sign" />
         ) : (
-          <button id="timerButton" onClick={this.props.startInterval}>
-            {!this.props.firstTime ? "START" : "RESUME"}
-          </button>
+          <TimerText min={min} sec={sec} />
         )}
+
+        <button
+          id="timerButton"
+          onClick={
+            this.props.timerOn
+              ? this.props.stopInterval
+              : this.props.startInterval
+          }
+        >
+          {this.props.buttonStatus()}
+        </button>
       </div>
     );
   }
