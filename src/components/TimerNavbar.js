@@ -6,12 +6,16 @@ import reset from "../static/reset.png";
 const TimerNavbar = props => {
   return (
     <div id="timerNavbar">
-      <div id="timerToggle">
+      <div
+        id={props.appStatus === "work" ? "workTimerToggle" : "breakTimerToggle"}
+        onClick={props.changeStatusHandler}
+      >
         <img src={toggleBall} alt="Settings Button" className="toggleBall" />
       </div>
 
       <button className="button">
-        {props.buttonStatus() === "BREAK" ? (
+        {props.buttonStatus() === "BREAK" ||
+        props.buttonStatus() === "FOCUS" ? (
           <img
             src={reset}
             alt="Reset Button"

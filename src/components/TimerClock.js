@@ -8,21 +8,23 @@ const TimerClock = props => {
   const sec = props.time % 60;
   return (
     <div id="timerClock">
-      <TimerProgressBar min={min} sec={sec} />
+      <TimerProgressBar min={min} sec={sec} appStatus={props.appStatus} />
 
       {props.buttonStatus() === "BREAK" ? (
         <img src={check} id="check" alt="completed sign" />
       ) : (
-        <TimerText min={min} sec={sec} />
+        <div id="timerTextContainer">
+          <TimerText min={min} sec={sec} />
+        </div>
       )}
       <button
-        id="timerButton"
+        id={props.appStatus === "work" ? "workTimerButton" : "breakTimerButton"}
         onClick={
           props.timerOn
             ? props.stopInterval
             : props.time !== 0
             ? props.startInterval
-            : props.changeAppStatusHandler
+            : props.changeStatusHandler
         }
       >
         {props.buttonStatus()}

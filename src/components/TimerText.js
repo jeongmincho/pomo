@@ -6,6 +6,9 @@ const TimerText = props => {
   return sec < 10 ? (
     <div id="timerText">
       {min}:0{sec}
+      {/* <div id="minText">{min}</div>
+      <div id="colonText">:</div>
+      <div id="secText">0{sec}</div> */}
     </div>
   ) : (
     <div id="timerText">

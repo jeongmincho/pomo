@@ -102,7 +102,7 @@
 
 /* ========= Timer Container Style ========= */
 
-#workTimeContainer {
+#workTimerContainer {
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -119,7 +119,7 @@
   box-shadow: 0px 0px 24px -2px rgba(138, 138, 138, 0.6);
 }
 
-#breakTimeContainer {
+#breakTimerContainer {
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -168,12 +168,36 @@
   font-weight: 100;
 }
 
-#timerText {
+#timerTextContainer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 200px;
-  left: 150px;
+  left: 140px;
+  width: 240px;
+}
+
+#timerText {
+  display: flex;
+  text-align: center;
   font-weight: 100;
   font-size: 120px;
+}
+
+#minText {
   position: absolute;
+  left: -20px;
+}
+
+#colonText {
+  position: absolute;
+  left: 110px;
+}
+
+#secText {
+  position: absolute;
+  left: 130px;
 }
 
 #filler {
@@ -198,23 +222,53 @@ button {
   width: 2rem;
 }
 
-#timerToggle {
+#workTimerToggle {
   height: 2rem;
   width: 3.5rem;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   display: flex;
+  justify-content: flex-start;
+  transition: all 1s ease-in;
+}
+
+#breakTimerToggle {
+  height: 2rem;
+  width: 3.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-end;
+  transition: all 1s ease-in;
 }
 
 .toggleBall {
   left: 0;
-  height: 2rem;
+  height: auto;
   width: 2rem;
   z-index: 1;
 }
 
-#timerButton {
+#workTimerButton {
   background-color: #F65050;
+  color: white;
+  position: absolute;
+  top: 480px;
+  left: 195px;
+  font-family: "SF Display";
+  font-size: 18px;
+  font-weight: 400;
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.23);
+  box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.23);
+}
+
+#breakTimerButton {
+  background-color: #007EFF;
   color: white;
   position: absolute;
   top: 480px;
