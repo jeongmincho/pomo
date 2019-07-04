@@ -5,12 +5,13 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 const TimerProgressBar = props => {
-  const { min, sec } = props;
-  const total = 25 * 60;
-  const current = min * 60 + sec;
-  const percentage = (current / total) * 100;
+  let total = "";
   let trailColor = "#FF8389";
+  props.appStatus === "work"
+    ? (total = props.maxWorkTime)
+    : (total = props.maxBreakTime);
   props.appStatus === "break" && (trailColor = "#5CB5FF");
+  const percentage = (props.time / total) * 100;
   return (
     <div style={{ width: "430px" }}>
       <CircularProgressbar
@@ -20,10 +21,8 @@ const TimerProgressBar = props => {
         styles={buildStyles({
           rotation: 0.575,
           strokeLinecap: "round",
-          textSize: "25px",
           pathTransitionDuration: 0.5,
           pathColor: "#FFFFFF",
-          textColor: "#FFFFFF",
           trailColor: trailColor
         })}
       />

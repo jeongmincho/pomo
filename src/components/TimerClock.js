@@ -8,9 +8,14 @@ const TimerClock = props => {
   const sec = props.time % 60;
   return (
     <div id="timerClock">
-      <TimerProgressBar min={min} sec={sec} appStatus={props.appStatus} />
+      <TimerProgressBar
+        time={props.time}
+        appStatus={props.appStatus}
+        maxWorkTime={props.maxWorkTime}
+        maxBreakTime={props.maxBreakTime}
+      />
 
-      {props.buttonStatus() === "BREAK" ? (
+      {props.buttonStatus() === "BREAK" || props.buttonStatus() === "FOCUS" ? (
         <img src={check} id="check" alt="completed sign" />
       ) : (
         <div id="timerTextContainer">

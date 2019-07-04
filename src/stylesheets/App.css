@@ -112,7 +112,7 @@
   width: 480px;
   color: white;
   border-radius: 5px;
-  background: linear-gradient(to right, #F1314C, #FF6633);
+  background: linear-gradient(to right, #F10000, #FF6633);
   padding: 1rem;
   -webkit-box-shadow: 0px 0px 24px -2px rgba(138, 138, 138, 0.6);
   -moz-box-shadow: 0px 0px 24px -2px rgba(138, 138, 138, 0.6);
@@ -140,7 +140,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%
+  width: 100%;
+  z-index: 100
 }
 
 #timerClock {
@@ -229,7 +230,6 @@ button {
   border-radius: 20px;
   display: flex;
   justify-content: flex-start;
-  transition: all 1s ease-in;
 }
 
 #breakTimerToggle {
@@ -239,7 +239,6 @@ button {
   border-radius: 20px;
   display: flex;
   justify-content: flex-end;
-  transition: all 1s ease-in;
 }
 
 .toggleBall {
@@ -291,4 +290,54 @@ button {
   position: absolute;
   width: 250px;
   height: auto;
+}
+
+.rc-slider-dot {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.rc-slider-handle {
+  border: none !important;
+}
+
+.rc-slider-handle:active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) !important;
+}
+
+.rc-slider-handle:hover {
+  border: none !important;
+}
+
+.rc-slider-handle:focus {
+  border: none !important;
+}
+
+.rc-slider-handle-click-focused:focus {
+  border: none !important;
+}
+
+.rc-slider-handle-click-focused {
+  border: none !important;
+}
+
+.rc-slider-track {
+  background-color: white !important;
+}
+
+#timerSettingsContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#timerSliderContainer {
+  margin-top: 10rem;
+  width: 80%
 }
