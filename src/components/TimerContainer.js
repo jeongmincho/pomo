@@ -22,6 +22,25 @@ class WorkTimerContainer extends React.Component {
     this.changeStatusHandler = this.changeStatusHandler.bind(this);
     this.changeMaxTimeHandler = this.changeMaxTimeHandler.bind(this);
     this.changeToSettingsHandler = this.changeToSettingsHandler.bind(this);
+    this.keydownHandler = this.keydownHandler.bind(this);
+  }
+
+  keydownHandler(e) {
+    if (e.key === " " || e.keyCode === 32 || e.code === "Space") {
+      this.state.timerOn
+        ? this.stopInterval()
+        : this.state.time !== 0
+        ? this.startInterval()
+        : this.changeStatusHandler();
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("keydown", this.keydownHandler);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("keydown", this.keydownHandler);
   }
 
   changeMaxTimeHandler(value) {

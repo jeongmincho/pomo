@@ -31,6 +31,7 @@ const TimerClock = props => {
             ? props.startInterval
             : props.changeStatusHandler
         }
+        tabIndex="0"
       >
         {props.buttonStatus()}
       </button>
