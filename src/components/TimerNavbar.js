@@ -20,8 +20,7 @@ const TimerNavbar = props => {
         <div />
       )}
       <button className="button">
-        {props.buttonStatus() === "BREAK" ||
-        props.buttonStatus() === "FOCUS" ? (
+        {props.buttonStatus() !== "START" ? (
           <img
             src={reset}
             alt="Reset Button"
