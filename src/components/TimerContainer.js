@@ -94,7 +94,6 @@ class WorkTimerContainer extends React.Component {
   }
 
   changeToSettingsHandler() {
-    console.log("working");
     this.setState({
       isSettingsOn: !this.state.isSettingsOn
     });
@@ -118,7 +117,7 @@ class WorkTimerContainer extends React.Component {
     this.timerID = setInterval(() => {
       this.setState({ time: this.state.time - 1 });
       if (this.state.time === 0) this.stopInterval();
-    }, 50);
+    }, 1000);
     this.setState({
       timerOn: true
     });

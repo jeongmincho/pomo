@@ -1,10 +1,6 @@
 import React from "react";
-import Slider, { Range } from "rc-slider";
+import Slider from "rc-slider";
 import TimerText from "./TimerText.js";
-
-// We can just import Slider or Range to reduce bundle size
-// import Slider from 'rc-slider/lib/Slider';
-// import Range from 'rc-slider/lib/Range';
 import "rc-slider/assets/index.css";
 import "../../src/stylesheets/App.css";
 
@@ -25,7 +21,6 @@ const TimerSettings = props => {
           railStyle={{ backgroundColor: "rgba(0, 0, 0, 0.1)" }}
           onChange={value => {
             props.changeMaxTimeHandler(value);
-            console.log(Math.floor(value / 60));
           }}
           step={300}
         />

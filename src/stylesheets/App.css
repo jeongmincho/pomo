@@ -1,34 +1,4 @@
-/*---------------------------------------------------------------------------*
- * SF UI Display
- *---------------------------------------------------------------------------*/
-
-/** Black */
-
-/*
-@font-face {
-  font-family: "SF Display";
-  font-weight: 900;
-  src: url("https://sf.abarba.me/SF-UI-Display-Black.otf");
-}
-
-/** Bold */
-
-/*
-@font-face {
-  font-family: "SF Display";
-  font-weight: 700;
-  src: url("https://sf.abarba.me/SF-UI-Display-Bold.otf");
-} */
-
-/** Heavy */
-
-/* @font-face {
-  font-family: "SF Display";
-  font-weight: 800;
-  src: url("https://sf.abarba.me/SF-UI-Display-Heavy.otf");
-} */
-
-/** Light */
+/* ========= Font Style ========= */
 
 @font-face {
   font-family: "SF Display";
@@ -36,40 +6,17 @@
   src: url("https://sf.abarba.me/SF-UI-Display-Light.otf");
 }
 
-/** Medium */
-
-/* @font-face {
-  font-family: "SF Display";
-  font-weight: 500;
-  src: url("https://sf.abarba.me/SF-UI-Display-Medium.otf");
-} */
-
-/** Regular */
-
 @font-face {
   font-family: "SF Display";
   font-weight: 400;
   src: url("https://sf.abarba.me/SF-UI-Display-Regular.otf");
 }
 
-/** Semibold */
-
-/*
-@font-face {
-  font-family: "SF Display";
-  font-weight: 600;
-  src: url("https://sf.abarba.me/SF-UI-Display-Semibold.otf");
-} */
-
-/** Thin */
-
 @font-face {
   font-family: "SF Display";
   font-weight: 300;
   src: url("https://sf.abarba.me/SF-UI-Display-Thin.otf");
 }
-
-/* Ultralight */
 
 @font-face {
   font-family: "SF Display";
@@ -164,7 +111,7 @@
 }
 
 .CircularProgressbar-text {
-  font-family: "SF Display";
+  font-family: "SF Display", Helvetica, Arial, san-serif;
   font-size: 20px;
   font-weight: 100;
 }
@@ -175,7 +122,7 @@
   justify-content: center;
   align-items: center;
   top: 200px;
-  left: 140px;
+  left: 135px;
   width: 240px;
 }
 
@@ -254,7 +201,7 @@ button {
   position: absolute;
   top: 480px;
   left: 195px;
-  font-family: "SF Display";
+  font-family: "SF Display", Helvetica, Arial, san-serif;
   font-size: 18px;
   font-weight: 400;
   width: 120px;
@@ -266,13 +213,24 @@ button {
   box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.23);
 }
 
+#workTimerButton:hover {
+  background-color: rgb(243, 77, 77);
+}
+
+#workTimerButton:active {
+  background-color: rgb(243, 77, 77);
+  -webkit-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.18);
+}
+
 #breakTimerButton {
-  background-color: #007EFF;
+  background-color: rgb(29, 142, 255);
   color: white;
   position: absolute;
   top: 480px;
   left: 195px;
-  font-family: "SF Display";
+  font-family: "SF Display", Helvetica, Arial, san-serif;
   font-size: 18px;
   font-weight: 400;
   width: 120px;
@@ -282,6 +240,17 @@ button {
   -webkit-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.23);
   -moz-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.23);
   box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.23);
+}
+
+#breakTimerButton:hover {
+  background-color: rgb(20, 137, 255);
+}
+
+#breakTimerButton:active {
+  background-color: rgb(20, 137, 255);
+  -webkit-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.18);
 }
 
 #check {
@@ -340,4 +309,32 @@ button {
 #timerSliderContainer {
   margin-top: 10rem;
   width: 80%
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: rgb(243, 243, 243);
+  font-size: 10px;
+  padding: .5rem .5rem;
+  font-family: "SF Display", Helvetica, Arial, san-serif;
+}
+
+#feedbackButton {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: none;
+  font-size: 16px;
+  background-color: none;
+  color: rgb(212, 212, 212);
+  padding: .5rem 1rem;
+  font-family: "SF Display", Helvetica, Arial, san-serif;
+  transition: all .5s;
+}
+
+#feedbackButton:hover {
+  color: rgb(185, 185, 185);
+  transition: all .5s;
 }
