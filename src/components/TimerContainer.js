@@ -43,6 +43,12 @@ class TimerContainer extends React.Component {
         ? this.startInterval()
         : this.changeStatusHandler();
     }
+    if (
+      (this.state.isSettingsOn && (e.key === "Enter" || e.code === "Enter")) ||
+      (e.key === "Escape" || e.code === "Escape")
+    ) {
+      this.changeToSettingsHandler();
+    }
   }
 
   componentDidMount() {

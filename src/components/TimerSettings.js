@@ -16,7 +16,7 @@ const TimerSettings = props => {
         <Slider
           min={300}
           max={3600}
-          defaultValue={1500}
+          defaultValue={props.time}
           dots={true}
           railStyle={{ backgroundColor: "rgba(0, 0, 0, 0.1)" }}
           onChange={value => {
