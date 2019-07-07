@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "notifyjs": "^3.0.0",
     "rc-slider": "^8.6.13",
     "react": "^16.8.6",
     "react-circular-progressbar": "^2.0.1",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-web-notification": "^0.6.0"
   },
   "scripts": {
     "start": "react-scripts start",

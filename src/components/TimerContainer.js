@@ -2,8 +2,9 @@ import React from "react";
 import TimerNavbar from "./TimerNavbar.js";
 import TimerClock from "./TimerClock.js";
 import TimerSettings from "./TimerSettings.js";
+import Notify from "notifyjs";
 
-class WorkTimerContainer extends React.Component {
+class TimerContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,7 +26,16 @@ class WorkTimerContainer extends React.Component {
     this.keydownHandler = this.keydownHandler.bind(this);
   }
 
+  workDoneNotification = new Notify("Pomo Focus Timer", {
+    body: "Great work! Your work session is now complete."
+  });
+
+  breakDoneNotification = new Notify("Pomo Focus Timer", {
+    body: "Your break session is now complete. Let's get back to focus!"
+  });
+
   keydownHandler(e) {
+    e.preventDefault();
     if (e.key === " " || e.keyCode === 32 || e.code === "Space") {
       this.state.timerOn
         ? this.stopInterval()
@@ -126,6 +136,9 @@ class WorkTimerContainer extends React.Component {
   }
 
   doneInterval() {
+    this.state.appStatus === "work"
+      ? this.workDoneNotification.show()
+      : this.breakDoneNotification.show();
     clearInterval(this.timerID);
     this.setState({
       timerOn: false
@@ -135,8 +148,10 @@ class WorkTimerContainer extends React.Component {
   startInterval() {
     this.timerID = setInterval(() => {
       this.setState({ time: this.state.time - 1 });
-      if (this.state.time === 0) this.stopInterval();
-    }, 1000);
+      if (this.state.time === 0) {
+        this.doneInterval();
+      }
+    }, 50);
     this.setState({
       timerOn: true
     });
@@ -180,4 +195,4 @@ class WorkTimerContainer extends React.Component {
   }
 }
 
-export default WorkTimerContainer;
+export default TimerContainer;

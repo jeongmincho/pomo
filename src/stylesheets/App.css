@@ -214,18 +214,18 @@ button {
 }
 
 #workTimerButton:hover {
-  background-color: rgb(243, 77, 77);
+  background-color: rgb(230, 66, 66);
 }
 
 #workTimerButton:active {
-  background-color: rgb(243, 77, 77);
-  -webkit-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.18);
-  -moz-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.18);
-  box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.18);
+  background-color: rgb(230, 66, 66);
+  -webkit-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.1);
 }
 
 #breakTimerButton {
-  background-color: rgb(29, 142, 255);
+  background-color: rgb(44, 150, 255);
   color: white;
   position: absolute;
   top: 480px;
@@ -248,9 +248,9 @@ button {
 
 #breakTimerButton:active {
   background-color: rgb(20, 137, 255);
-  -webkit-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.18);
-  -moz-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.18);
-  box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.18);
+  -webkit-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.1);
 }
 
 #check {
