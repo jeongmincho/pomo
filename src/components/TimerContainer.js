@@ -157,7 +157,7 @@ class TimerContainer extends React.Component {
       if (this.state.time === 0) {
         this.doneInterval();
       }
-    }, 50);
+    }, 1000);
     this.setState({
       timerOn: true
     });
